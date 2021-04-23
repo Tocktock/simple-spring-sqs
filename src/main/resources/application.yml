@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    include:
+      - aws
+cloud:
+  aws:
+    sqs:
+      queue:
+        url: ${{ secrets.SQS_QUEUE_URL }}
+    region:
+      static: ap-northeast-2
+    credentials:
+      instance-profile: true
+    stack:
+      auto: false
